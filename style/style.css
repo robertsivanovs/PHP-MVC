@@ -1,0 +1,249 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('../images/index.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+}
+
+/* DIV Boxes */
+.box--blue {
+    margin: 100px 0 0 200px;
+    min-width: 420px;
+    height: 400px;
+    background: rgba(41,48,67,0.9);
+}
+.box-second--blue {
+    margin-top: 100px;
+    min-width: 470px;
+    height: 400px;
+    background: rgba(41,48,67,0.9);
+  }
+  
+.box-login--white {
+    position: relative;
+    top: 80px;
+    left: -450px;
+    min-width: 430px;
+    height: 440px;
+    background-color: white;
+    box-shadow: -12px 0 2px -6px #81d1f1;
+}
+
+.box-signup--white {
+    position:relative;
+    display:none;
+    top: 80px;
+    left: -850px;
+    min-width: 430px;
+    height: 440px;
+    background-color: white;
+    box-shadow: -12px 0 2px -6px #81d1f1;
+}
+/* End of DIV boxes */
+
+/* Media query for responsiveness */
+@media only screen and (max-width: 900px) {
+    .container{
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .box--blue, .box-second--blue { 
+        margin: 0;
+        min-width: 100%; 
+    }
+    .box-login--white, .box-signup--white { 
+        left: 0px; 
+        Top: 0px; 
+        width: 100%; 
+    }
+}
+/* End of Media query for responsiveness */
+
+/* Headings (h1) */
+h1 {
+    font-size: 25px;
+    color: #e2e3e6;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.7;
+    font-weight: 550;
+    letter-spacing: 1px;
+}
+/* Headings for dark DIV boxes */
+.box--blue h1 { margin: 50px 0 0 66px; }
+.box-second--blue h1 { margin: 75px 0 0 100px; }
+/* Headings for white DIV boxes */
+.box-login--white h1 { margin: 70px 0 0 85px; color: #3d495f; }
+.box-signup--white h1 { margin: 50px 0 0 80px;color: #3d495f; }
+/* end of Headings (h1) */
+
+/* Blue lines under headings */
+span {
+  display: inline-block;
+  content:" "; 
+  background-color: #49acff;
+  height: 2.0px; 
+  width: 35px;
+}
+
+div.box--blue > span { margin: 10px 0 0 66px; }
+div.box-second--blue > span { margin: 10px 0 0 100px; }
+div.box-login--white > span { margin: 19px 0 0 85px; }
+div.box-signup--white > span { margin: 25px 0 0 80px; }
+/* end of blue lines */
+
+/*lorem ipsum paragraphs*/
+p {
+    white-space: pre;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.7;
+    font-weight: 550;
+    letter-spacing: 1px;
+}
+
+div.box--blue > p { margin: 15px 0 0 66px; }
+div.box-second--blue > p { margin: 30px 0 0 100px; }
+/* end of lorem ipsum paragraphs*/
+
+/* Buttons*/
+/* Blue buttons */
+button {
+    padding: 15px;
+    width: 130px;
+    background: rgba(41,48,67,0.9);
+    border: 2px solid #49acff;
+    border-radius: 26px;
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.box__button {
+    margin: 20px 0 0 66px;
+}
+.box-second__button  { 
+    margin: 20px 0 0 100px;
+}
+.box__button:hover, .box-second__button:hover {
+    background-color: #48abfe; cursor: pointer;
+}
+/* Orange buttons: */
+input[type="submit"] { 
+
+    display: block;
+    padding: 15px;
+    width: 125px;
+    border: 0px solid;
+    border-radius: 26px;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1.7px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #f89a36;
+    color: white;
+}
+.box-login--white input[type="submit"] { margin: 80px 0 0 85px; }
+.box-login--white input[type="submit"]:hover , .box-signup--white input[type="submit"]:hover {
+    background-color: #f8bf34;
+    cursor:pointer;
+}
+.box-signup--white input[type="submit"] { margin: 60px 0 0 80px; }
+/* end of buttons */
+
+/* Labels above input fields*/
+label {
+    display:block;
+    font-size: 16px;
+    color:  #8595b7;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.box-login__label-forgot { margin: -35px 0 0 325px; }
+.box-login__label-email { margin: 40px 0 0 85px; }
+.box-login__label-password { margin: 70px 0 0 85px; }
+.box-signup__label-name { margin: 40px 0 0 80px; }
+.box-signup__label-email { margin: 45px 0 0 80px; }
+.box-signup__label-password { margin: 45px 0 0 80px; }
+/* end of labels*/
+
+/* Input fields*/
+input {
+    outline: 0;
+    border-width: 0px 0px 1px;
+    border-color: silver;
+    background-color: white;
+}
+.box-login__input-email, 
+.box-login__input-password { 
+    margin: 15px 0 0 85px; 
+}
+.box-signup__input-name, .box-signup__input-email, 
+.box-signup__input-password { 
+    margin: 15px 0 0 80px; 
+}
+
+/* Change icon colors when input fields are active */
+.box-login__input-email:focus + img.box-login__icon-active-email {
+    display:block;
+}
+.box-login__input-email:focus ~ img.box-login__icon-inactive-email {
+    display:none;
+}
+.box-login__input-password:focus + img.box-login__icon-active-password {
+    display:block;
+}
+.box-login__input-password:focus ~ img.box-login__icon-inactive-password {
+    display:none;
+}
+
+.box-signup__input-name:focus + img.box-signup__icon-active-name {
+    display:block;
+}
+.box-signup__input-name:focus ~ img.box-signup__icon-inactive-name {
+    display:none;
+}
+.box-signup__input-email:focus + img.box-signup__icon-active-email {
+    display:block;
+}
+.box-signup__input-email:focus ~ img.box-signup__icon-inactive-email {
+    display:none;
+}
+.box-signup__input-password:focus + img.box-signup__icon-active-password {
+    display:block;
+}
+.box-signup__input-password:focus ~ img.box-signup__icon-inactive-password {
+    display:none;
+}
+/* icons */
+img {
+    display:block;
+}
+
+.box-login__icon-magebit { margin: -50px 0 0 320px; }
+.box-signup__icon-magebit { margin: -55px 0 0 320px; }
+
+.box-login__icon-inactive-email, 
+.box-login__icon-inactive-password { margin: -60px 0 0 350px }
+
+.box-signup__icon-inactive-name, 
+.box-signup__icon-inactive-email, 
+.box-signup__icon-inactive-password { margin: -50px 0 0 350px }
+
+.box-login__icon-active-email, 
+.box-login__icon-active-password { display:none; margin: -60px 0 0 350px;}
+
+.box-signup__icon-active-name, 
+.box-signup__icon-active-email, 
+.box-signup__icon-active-password { display:none; margin: -50px 0 0 350px; }

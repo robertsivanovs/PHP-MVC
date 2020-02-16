@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: white;
+}
+.container {
+    background-color: lightblue;
+    display: flex;
+    width:  100%;
+    margin: 0 auto;
+}
+
+.box1 {
+    background-color: whitesmoke;
+    width: 230px;
+    height: 70px;
+    border: 1px solid black;
+}
+
+.box2 {
+    background-color: whitesmoke;
+    height: 100%;
+    margin-left: 100px;
+}
+
+input[type="text"], label {
+    display:block;
+}
+
+.box1 input[type="submit"] {
+  background-color: #555555;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px;
+}
