@@ -4,6 +4,7 @@
  * Route class to compare URL with valid route and call a controller if URL matches route.
  */
 class route {
+    
     public static $validRoutes = array();
 
     /**
@@ -21,7 +22,14 @@ class route {
         self::$validRoutes[] = $route;
         $uri = $_SERVER['REQUEST_URI'];
         $uri = strtolower($uri);
-        if ($uri == $route)
-        $function->__invoke();
+        
+        // Index view
+        if ($route == "/") {
+           return $function->__invoke();
+        }
+
+        if ($uri == $route) {
+            return $function->__invoke();
+        }
     }
 }

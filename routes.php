@@ -1,32 +1,33 @@
 <?php
 
-// Loads all classes, controllers, models.
-spl_autoload_register(function($class) {
-    if(file_exists('app/classes/'.$class.'.php')) {
-        include 'app/classes/'.$class.'.php';
-    } else if (file_exists('app/controllers/'.$class.'.php')) {
-        include 'app/controllers/'.$class.'.php';
-    } else if (file_exists('app/models/'.$class.'.php')) {
-        include 'app/models/'.$class.'.php';
-    } else if (file_exists('app/attributes_task/'.$class.'.php')) {
-        include 'app/attributes_task/'.$class.'.php';
-    }
-});
+/*
+* Routes
+* 
+* This file is included in index.php
+* Define ROOT_DIRECTORY in config.php
+*
+*/
+
+include 'config.php';
+include 'app/classes/autoloader.php';
+
+$config = new config();
+$autoloader = new autoloader();
 
 // Index view
-route::set("/hack/", function() { // Index directory 
+route::set($config::ROOT_DIRECTORY, function() { // Index directory 
     IndexController::CreateView('IndexView');
 });
 
 // Register 
-route::set("/hack/register/", function() {
+route::set($config::ROOT_DIRECTORY . "register/", function() {
     return (new RegisterController())->registerUser();
 });
 // Login
-route::set("/hack/login/", function() {
+route::set($config::ROOT_DIRECTORY . "login/", function() {
     return (new LoginController())->loginUser();
   });
 // Attributes
-route::set("/hack/attributes_submit/", function() {
+route::set($config::ROOT_DIRECTORY . "attributes_submit/", function() {
     return (new AttributesController())->updateAttributes();
 });

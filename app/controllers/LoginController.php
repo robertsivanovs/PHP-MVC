@@ -7,7 +7,8 @@
  * Returns error if no such e-mail found or password was incorrect.
  */
 
-class LoginController extends BaseController{
+class LoginController extends BaseController
+{
 
     /**
      * loginUser
@@ -15,10 +16,11 @@ class LoginController extends BaseController{
      * Returns error if no email was found or user password was incorrect.
      * @return void
      */
-    public function loginUser() {
+    public function loginUser()
+    {
 
         // Check if form was posted
-        if($_SERVER['REQUEST_METHOD'] !== 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             Header("Location: ../");
         }
 
@@ -28,8 +30,8 @@ class LoginController extends BaseController{
         // Validation
         validator::checkEmail("Email", $email);
         validator::checkEmpty("Password", $password)
-        ->checkLength("Password", $password)
-        ->checkBadSymbols("Password", $password);
+            ->checkLength("Password", $password)
+            ->checkBadSymbols("Password", $password);
 
         // If validation fails
         if (!empty(validator::$error)) {
@@ -43,13 +45,14 @@ class LoginController extends BaseController{
         } else {
             validator::$error = " No such Email!"; // If $userData returned empty means no email was found in DB
             self::CreateView("FailedView");
-        } if(isset($passwordHash)){
-            if (password_verify($password, $passwordHash)){ // Login user
+        }
+        if (isset($passwordHash)) {
+            if (password_verify($password, $passwordHash)) { // Login user
                 session_start();
                 $_SESSION['username'] = $userData['username']; // Username
                 $_SESSION['loggedin'] = 'true';
                 self::CreateView("loggedView");
-            } else { 
+            } else {
                 validator::$error = "Incorrect Password!";
                 self::CreateView("FailedView");
             }

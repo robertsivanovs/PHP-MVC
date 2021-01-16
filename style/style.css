@@ -8,6 +8,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
 }
 
 .container {
@@ -18,7 +19,7 @@ body {
 
 /* DIV Boxes */
 .box--blue {
-    margin: 100px 0 0 200px;
+    margin: 100px 0 0 300px;
     min-width: 420px;
     height: 400px;
     background: rgba(41,48,67,0.9);
