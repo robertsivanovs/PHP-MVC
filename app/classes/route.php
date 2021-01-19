@@ -3,7 +3,7 @@
 /**
  * Route class to compare URL with valid route and call a controller if URL matches route.
  */
-class route {
+class Route {
     
     public static $validRoutes = array();
 

@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1> Action Failed: </h1>
-<h3><?php echo validator::showErrors(); ?> </h3>
+<h3><?php echo Validator::showErrors(); ?> </h3>
 <a href='../'>Back</a>
 </body>
 </html>

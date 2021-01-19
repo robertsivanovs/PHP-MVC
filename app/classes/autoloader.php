@@ -1,10 +1,10 @@
 <?php
 /**
- * autoloader
+ * AutoLoader
  * 
  * Loads all files needed to run project
  */
-class autoloader
+class AutoLoader
 {
     public function __construct()
     {

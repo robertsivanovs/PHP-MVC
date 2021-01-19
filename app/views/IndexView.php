@@ -1,5 +1,5 @@
 <?php
-$config = new config();
+$config = new Config();
 ?>
 
 <!DOCTYPE html>

@@ -7,7 +7,7 @@
  * Main controller, all other controllers will inherit from this controller.
  * 
  */
-class BaseController extends database {
+class BaseController extends Database {
     /**
      * CreateView
      *

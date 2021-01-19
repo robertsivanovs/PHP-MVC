@@ -6,9 +6,10 @@
  * Contains configuration needed to run project
  * 
  */
-class config {
-    // Project root directory
-    const ROOT_DIRECTORY = "/magebit/"; // Edit this to your project root directory
+class Config {
+    // PROJECT ROOT DIRECTORY
+    const ROOT_DIRECTORY = "/home/";
+
 }
 
 ?>

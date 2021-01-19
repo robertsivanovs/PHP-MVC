@@ -28,13 +28,13 @@ class LoginController extends BaseController
         $password = $_POST['box-login__input-password'];
 
         // Validation
-        validator::checkEmail("Email", $email);
-        validator::checkEmpty("Password", $password)
+        Validator::checkEmail("Email", $email);
+        Validator::checkEmpty("Password", $password)
             ->checkLength("Password", $password)
             ->checkBadSymbols("Password", $password);
 
         // If validation fails
-        if (!empty(validator::$error)) {
+        if (!empty(Validator::$error)) {
             self::CreateView("FailedView");
         }
         // Login user
@@ -43,7 +43,7 @@ class LoginController extends BaseController
         if ($userData) {
             $passwordHash = $userData['password']; // Hashed password
         } else {
-            validator::$error = " No such Email!"; // If $userData returned empty means no email was found in DB
+            Validator::$error = " No such Email!"; // If $userData returned empty means no email was found in DB
             self::CreateView("FailedView");
         }
         if (isset($passwordHash)) {
@@ -53,7 +53,7 @@ class LoginController extends BaseController
                 $_SESSION['loggedin'] = 'true';
                 self::CreateView("loggedView");
             } else {
-                validator::$error = "Incorrect Password!";
+                Validator::$error = "Incorrect Password!";
                 self::CreateView("FailedView");
             }
         }

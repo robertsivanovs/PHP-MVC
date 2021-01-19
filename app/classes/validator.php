@@ -5,7 +5,7 @@
  * Validation class to validate and sanitize user input
  */
 
-class validator {
+class Validator {
 
     public static $error;
 

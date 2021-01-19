@@ -40,27 +40,27 @@ class RegisterController extends BaseController
         if (isset($_POST['box-signup__button'])) {
 
             // Validation
-            validator::checkEmpty("Username", $username)
+            Validator::checkEmpty("Username", $username)
                 ->checkLength("Username", $username)
                 ->checkBadSymbols("Username", $username);
 
-            validator::checkEmail("Email", $email);
+                Validator::checkEmail("Email", $email);
 
-            validator::checkEmpty("Password", $password)
+                Validator::checkEmpty("Password", $password)
                 ->checkLength("Password", $password)
                 ->checkBadSymbols("Password", $password);
         }   // If validation failed
-        if (!empty(validator::$error)) {
+        if (!empty(Validator::$error)) {
             self::CreateView("FailedView");
 
             // Check if username already exists
         } else if (UserModel::checkIfUserExists($username)) {
-            validator::$error = "Username " . htmlspecialchars($username) . " already exists! ";
+            Validator::$error = "Username " . htmlspecialchars($username) . " already exists! ";
             self::CreateView("FailedView");
 
             // Check if email already exists
         } else if (UserModel::checkIfEmailExists($email)) {
-            validator::$error = "Email " . htmlspecialchars($email) . " already exists! ";
+            Validator::$error = "Email " . htmlspecialchars($email) . " already exists! ";
             self::CreateView("FailedView");
 
             // Register user
