@@ -63,24 +63,6 @@ body {
 }
 /* End of DIV boxes */
 
-/* Media query for responsiveness */
-@media only screen and (max-width: 900px) {
-    .container{
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-    .box--blue, .box-second--blue { 
-        margin: 0;
-        min-width: 100%; 
-    }
-    .box-login--white, .box-signup--white { 
-        left: 0px; 
-        Top: 0px; 
-        width: 100%; 
-    }
-}
-/* End of Media query for responsiveness */
-
 /* Headings (h1) */
 h1 {
     font-size: 25px;
@@ -264,3 +246,32 @@ img {
 .box-signup__icon-active-name, 
 .box-signup__icon-active-email, 
 .box-signup__icon-active-password { display:none; margin: -50px 0 0 350px; }
+
+/* Media query for responsiveness */
+@media only screen and (max-width: 900px) {
+    .container {
+        margin: 0;
+        width: 100%;
+        display: block;
+    }
+    .box--blue, .box-second--blue { 
+        display: none;
+    }
+    div.box-login--white, div.box-signup--white {
+        position: unset;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: 0;
+        display: block;
+        width: 100%;
+        border: none;
+        border-radius: 0;        
+        text-align: center;
+    }
+
+    input[type="submit"] {
+        display: unset;
+    }
+}
+/* End of Media query for responsiveness */
