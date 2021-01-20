@@ -10,7 +10,7 @@
 
 require_once './app/classes/database.php';
 
-class AttributeModel extends database {
+class AttributeModel extends Database {
     
     /**
      * insertAttribute

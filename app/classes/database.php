@@ -6,7 +6,7 @@
 class Database {
 
     private static $host = "localhost";
-    private static $dbName = "magebit";
+    private static $dbName = "db_name";
     private static $username = "root";
     private static $password = "";
 

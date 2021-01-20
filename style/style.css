@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url('../images/index.jpg');
+    background-image: url('../images/index3.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -12,44 +12,54 @@ body {
 }
 
 .container {
-    margin: 0 auto;
     display: flex;
-    width: 100%;
+    width: 60%;
+    margin: 0 auto;
 }
 
 /* DIV Boxes */
 .box--blue {
-    margin: 100px 0 0 300px;
+    position: relative;
     min-width: 420px;
     height: 400px;
-    background: rgba(41,48,67,0.9);
+    background: rgba(11, 63, 29, 0.85);
+    margin: 150px 0;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
 }
 .box-second--blue {
-    margin-top: 100px;
+    margin: 150px 0;
     min-width: 470px;
     height: 400px;
-    background: rgba(41,48,67,0.9);
+    background: rgba(11, 63, 29, 0.85);
+    float: left;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
   }
   
 .box-login--white {
     position: relative;
-    top: 80px;
+    top: 100px;
     left: -450px;
     min-width: 430px;
     height: 440px;
     background-color: white;
     box-shadow: -12px 0 2px -6px #81d1f1;
+    border-radius: 5%;
+
 }
 
 .box-signup--white {
     position:relative;
     display:none;
-    top: 80px;
+    top: 100px;
     left: -850px;
     min-width: 430px;
     height: 440px;
     background-color: white;
     box-shadow: -12px 0 2px -6px #81d1f1;
+    border-radius: 5%;
+
 }
 /* End of DIV boxes */
 

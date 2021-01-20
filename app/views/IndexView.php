@@ -37,7 +37,6 @@ adipisicng ellt.</p>
         </div>
         <div class="box-login--white">
             <h1>Login</h1>
-            <img class="box-login__icon-magebit" src="images/magebit.jpg">
             <span class="box-login__span">
                 <!-- Blue line under h1 title -->
             </span>
@@ -59,7 +58,6 @@ adipisicng ellt.</p>
             <span class="box--signup__span">
                 <!-- Blue line under h1 title -->
             </span>
-            <img class="box-signup__icon-magebit" src="images/magebit.jpg">
             <form name="signup" action="<?= $config::ROOT_DIRECTORY; ?>register/" method="POST">
                 <label class="box-signup__label-name">Name<span class="box-signup__star-span">*</span></label>
                 <input type="text" class="box-signup__input-name" required pattern="^[a-zA-Z0-9][a-zA-Z0-9-_\.]{4,}$" title="Min: 5 Symbols, only A-z , 0-9" name="box-signup__input-name" size="37">
@@ -82,11 +80,16 @@ adipisicng ellt.</p>
     <script>
         $(document).ready(function() {
             $(".box__button").click(function() {
-                $('.box-login--white').animate({
+                $(".box__button").prop('disabled', true);
+                $(".box-second__button").prop('disabled', false);
+
+                    $('.box-login--white').animate({
                     'marginLeft': "-=430px"
                 });
             });
             $(".box-second__button").click(function() {
+                $(".box-second__button").prop('disabled', true);
+                $(".box__button").prop('disabled', false);
                 $('.box-signup--white').animate({
                     'marginLeft': "+=430px"
                 });
