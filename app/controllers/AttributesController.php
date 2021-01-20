@@ -31,22 +31,23 @@ Class AttributesController extends BaseController {
 
         // Validate
         foreach($att as $value){
-            validator::checkEmpty("Attribute", $value)->
+            Validator::checkEmpty("Attribute", $value)->
             checkBadAttribute("Attribute", $value)->
             checkEmpty("Attribute", $value);
         }
         foreach($val as $value){
-            validator::checkEmpty("Attribute value", $value)->
+            Validator::checkEmpty("Attribute value", $value)->
             checkBadAttribute("Attribute value", $value)->
             checkEmpty("Attribute value", $value);
         }
         // If validation fails
-        if (!empty(validator::$error)) {
-            self::CreateView("FailedView");
+        if (!empty(Validator::$error)) {
+            return self::CreateView("FailedView");
+        }
 
-            // Store attributes in database
-        } else if (AttributeModel::insertAttribute($att, $val)) {
-            self::createView("AttributesView");
+        // Store attributes in database
+        if (AttributeModel::insertAttribute($att, $val)) {
+            return self::createView("AttributesView");
         }
     }
 }

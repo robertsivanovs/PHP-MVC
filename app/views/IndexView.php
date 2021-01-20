@@ -15,7 +15,7 @@ $config = new Config();
     <div class="container">
         <div class="box--blue">
             <h1>Don't have an account?</h1>
-            <span>
+            <span class="box__span">
                 <!-- Blue line under h1 title -->
             </span>
             <p>Lorem Ipsum is simply dummy text
@@ -28,7 +28,7 @@ and scrambled it to make a type specimen book. </p>
         </div>
         <div class="box-second--blue">
             <h1>Have an account?</h1>
-            <span>
+            <span class="box--second__span">
                 <!-- Blue line under h1 title -->
             </span>
             <p>Lorem ipsum dolor sit amet consecutor
@@ -38,15 +38,15 @@ adipisicng ellt.</p>
         <div class="box-login--white">
             <h1>Login</h1>
             <img class="box-login__icon-magebit" src="images/magebit.jpg">
-            <span>
+            <span class="box-login__span">
                 <!-- Blue line under h1 title -->
             </span>
             <form action="<?= $config::ROOT_DIRECTORY; ?>login/" method="POST">
-                <label class="box-login__label-email">Email<font color="red">*</font></label>
+                <label class="box-login__label-email">Email<span class="box-login__star-span">*</span></label>
                 <input class="box-login__input-email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="box-login__input-email" size="37">
                 <img class="box-login__icon-active-email" src="images/email_colored.ico">
                 <img class="box-login__icon-inactive-email" src="images/email.ico">
-                <label class="box-login__label-password"> Password<font color="red">*</font></label>
+                <label class="box-login__label-password"> Password<span class="box-login__star-span">*</span></label>
                 <input class="box-login__input-password" type="password" required pattern="^[a-zA-Z0-9][a-zA-Z0-9-_\.]{4,}$" title="Min: 5 Symbols, only A-z , 0-9" name="box-login__input-password" size="37">
                 <img class="box-login__icon-active-password" src="images/pwd_colored.ico">
                 <img class="box-login__icon-inactive-password" src="images/pwd.ico">
@@ -56,21 +56,20 @@ adipisicng ellt.</p>
         </div>
         <div class="box-signup--white">
             <h1>Sign Up</h1>
-            <span>
+            <span class="box--signup__span">
                 <!-- Blue line under h1 title -->
             </span>
             <img class="box-signup__icon-magebit" src="images/magebit.jpg">
             <form name="signup" action="<?= $config::ROOT_DIRECTORY; ?>register/" method="POST">
-                <label class="box-signup__label-name">Name<font color="red">*</font>
-                    </font></label>
+                <label class="box-signup__label-name">Name<span class="box-signup__star-span">*</span></label>
                 <input type="text" class="box-signup__input-name" required pattern="^[a-zA-Z0-9][a-zA-Z0-9-_\.]{4,}$" title="Min: 5 Symbols, only A-z , 0-9" name="box-signup__input-name" size="37">
                 <img class="box-signup__icon-active-name" src="images/cuvaks2.ico">
                 <img class="box-signup__icon-inactive-name" src="images/cuvaks.ico">
-                <label class="box-signup__label-email">Email<font color="red">*</font></label>
+                <label class="box-signup__label-email">Email<span class="box-signup__star-span">*</span></label>
                 <input type="email" class="box-signup__input-email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="box-signup__input-email" size="37">
                 <img class="box-signup__icon-active-email" src="images/email_colored.ico">
                 <img class="box-signup__icon-inactive-email" src="images/email.ico">
-                <label class="box-signup__label-password">Password<font color="red">*</font></label>
+                <label class="box-signup__label-password">Password<span class="box-signup__star-span">*</span></label>
                 <input type="password" class="box-signup__input-password" required pattern="^[a-zA-Z0-9][a-zA-Z0-9-_\.]{4,}$" title="Min: 5 Symbols, only A-z , 0-9" name="box-signup__input-password" size="37">
                 <img class="box-signup__icon-active-password" src="images/pwd_colored.ico">
                 <img class="box-signup__icon-inactive-password" src="images/pwd.ico">
@@ -78,12 +77,8 @@ adipisicng ellt.</p>
             </form>
         </div>
     </div>
-    <script src="JS/script.js">
-        async
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-        async
-    </script>
+    <script src="JS/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
             $(".box__button").click(function() {
@@ -91,8 +86,6 @@ adipisicng ellt.</p>
                     'marginLeft': "-=430px"
                 });
             });
-        });
-        $(document).ready(function() {
             $(".box-second__button").click(function() {
                 $('.box-signup--white').animate({
                     'marginLeft': "+=430px"
@@ -100,7 +93,7 @@ adipisicng ellt.</p>
                 $('.box-login--white').animate({
                     'marginLeft': "+=430px"
                 });
-                document.getElementsByClassName("box-signup--white")[0].style.display = 'none';
+                $(".box-signup--white").hide();
                 $('.box-signup--white').animate({
                     'marginLeft': "-=430px"
                 });

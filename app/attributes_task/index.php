@@ -1,3 +1,6 @@
+<?php
+$config = new Config();
+?>
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -9,7 +12,7 @@
 <body>
     <div class="container">
         <div class="box1">
-            <form id="form" action="/hack/attributes_submit/" method="POST">
+            <form id="form" action="<?= $config::ROOT_DIRECTORY; ?>attributes_submit/" method="POST">
                 <h3>Submit to database:</h3>
                 <input type="submit" class="box1__submit" name="box1__submit" value="Submit changes">
         </div>

@@ -89,12 +89,13 @@ h1 {
 /* end of Headings (h1) */
 
 /* Blue lines under headings */
-span {
-  display: inline-block;
-  content:" "; 
-  background-color: #49acff;
-  height: 2.0px; 
-  width: 35px;
+
+.box__span, .box--second__span, .box-login__span, .box--signup__span {
+    display: inline-block;
+    content:" "; 
+    background-color: #49acff;
+    height: 2.0px; 
+    width: 35px;
 }
 
 div.box--blue > span { margin: 10px 0 0 66px; }
@@ -177,6 +178,11 @@ label {
 .box-signup__label-name { margin: 40px 0 0 80px; }
 .box-signup__label-email { margin: 45px 0 0 80px; }
 .box-signup__label-password { margin: 45px 0 0 80px; }
+
+/* Star * at the end of mandatory login/signup inputs */
+.box-login__star-span, .box-signup__star-span {
+    color: red;
+}
 /* end of labels*/
 
 /* Input fields*/

@@ -1,8 +1,5 @@
 <?php
 
-require_once './app/models/UserModel.php';
-
-
 /**
  * RegisterController
  * 
@@ -11,8 +8,7 @@ require_once './app/models/UserModel.php';
  * Returns errors if any.
  * 
  */
-class RegisterController extends BaseController
-{
+class RegisterController extends BaseController {
 
     /**
      * registerUser
@@ -23,12 +19,16 @@ class RegisterController extends BaseController
      * Registers user if valid.
      * @return void
      */
-    public function registerUser()
-    {
+    public function registerUser() {
 
         // Check if form was posted
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            Header("Location: ../");
+            return Header("Location: ../");
+        }
+
+        // Check if form submit button was pressed
+        if (!isset($_POST['box-signup__button'])) {
+            return Header("Location: ../");
         }
 
         // Get user input from posted input fields
@@ -36,40 +36,39 @@ class RegisterController extends BaseController
         $password = $_POST['box-signup__input-password'];
         $email = $_POST['box-signup__input-email'];
 
-        // Check if form submit button was pressed
-        if (isset($_POST['box-signup__button'])) {
+        // Validation
+        Validator::checkEmpty("Username", $username)
+            ->checkLength("Username", $username)
+            ->checkBadSymbols("Username", $username);
 
-            // Validation
-            Validator::checkEmpty("Username", $username)
-                ->checkLength("Username", $username)
-                ->checkBadSymbols("Username", $username);
+        Validator::checkEmail("Email", $email);
 
-                Validator::checkEmail("Email", $email);
+        Validator::checkEmpty("Password", $password)
+            ->checkLength("Password", $password)
+            ->checkBadSymbols("Password", $password);
 
-                Validator::checkEmpty("Password", $password)
-                ->checkLength("Password", $password)
-                ->checkBadSymbols("Password", $password);
-        }   // If validation failed
         if (!empty(Validator::$error)) {
-            self::CreateView("FailedView");
+            return self::CreateView("FailedView");
+        }
 
-            // Check if username already exists
-        } else if (UserModel::checkIfUserExists($username)) {
+        // Check if username already exists
+        if (UserModel::checkIfUserExists($username)) {
             Validator::$error = "Username " . htmlspecialchars($username) . " already exists! ";
-            self::CreateView("FailedView");
+            return self::CreateView("FailedView");
+        }
 
-            // Check if email already exists
-        } else if (UserModel::checkIfEmailExists($email)) {
+        // Check if email already exists
+        if (UserModel::checkIfEmailExists($email)) {
             Validator::$error = "Email " . htmlspecialchars($email) . " already exists! ";
-            self::CreateView("FailedView");
+            return self::CreateView("FailedView");
+        }
 
-            // Register user
-        } else {
-            UserModel::registerUser($username, $email, $password);
+        // Register user
+        if (UserModel::registerUser($username, $email, $password)) {
             session_start();
             $_SESSION['username'] = $username;
             $_SESSION['loggedin'] = 'true';
-            self::CreateView("loggedView");
-        }
+            return self::CreateView("loggedView");
+        }   
     }
 }
