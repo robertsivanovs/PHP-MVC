@@ -31,3 +31,8 @@ Route::set($config::ROOT_DIRECTORY . "login/", function() {
 Route::set($config::ROOT_DIRECTORY . "attributes_submit/", function() {
     return (new AttributesController())->updateAttributes();
 });
+
+// Index view
+Route::set($config::ROOT_DIRECTORY ."attributes_task/", function() { // Index directory 
+    IndexController::CreateAttributesView();
+});

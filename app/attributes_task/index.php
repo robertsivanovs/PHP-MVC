@@ -3,7 +3,7 @@ $config = new Config();
 ?>
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../app/attributes_task/style.css">
     <title>
         Attributes task
     </title>
@@ -30,7 +30,7 @@ $config = new Config();
         </div>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="../app/attributes_task/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- RESET COUNTER WHEN USER HITS BACK OR ON PAGE LOAD -->
 <script>
