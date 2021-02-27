@@ -20,8 +20,4 @@ class BaseController extends Database {
     public static function CreateView($viewName){
         require_once ("./app/views/$viewName.php");
     }
-
-    public static function CreateAttributesView(){
-        require_once ("./app/attributes_task/index.php");
-    }
 }

@@ -13,7 +13,7 @@ body {
 
 .container {
     display: flex;
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -23,12 +23,12 @@ body {
     min-width: 420px;
     height: 400px;
     background: rgba(11, 63, 29, 0.85);
-    margin: 150px 0;
+    margin: 100px 0 100px 230px;
     border-top-left-radius: 5%;
     border-bottom-left-radius: 5%;
 }
 .box-second--blue {
-    margin: 150px 0;
+    margin-top: 100px;
     min-width: 470px;
     height: 400px;
     background: rgba(11, 63, 29, 0.85);
@@ -39,7 +39,7 @@ body {
   
 .box-login--white {
     position: relative;
-    top: 100px;
+    top: 70px;
     left: -450px;
     min-width: 430px;
     height: 440px;
@@ -52,7 +52,7 @@ body {
 .box-signup--white {
     position:relative;
     display:none;
-    top: 100px;
+    top: 70px;
     left: -850px;
     min-width: 430px;
     height: 440px;

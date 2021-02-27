@@ -15,8 +15,6 @@ class AutoLoader
                 include 'app/controllers/' . $class . '.php';
             } else if (file_exists('app/models/' . $class . '.php')) {
                 include 'app/models/' . $class . '.php';
-            } else if (file_exists('app/attributes_task/' . $class . '.php')) {
-                include 'app/attributes_task/' . $class . '.php';
             }
         });
     }
