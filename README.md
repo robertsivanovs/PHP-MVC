@@ -30,7 +30,7 @@ Technologies used:
 ### Preview:
 
 ### Login:
-![Login](https://i.ibb.co/K53yYtD/index.jpg "Login")
+![Login](https://i.imgur.com/eUWngdL.jpg "Login")
 
 ### SignUp:
 ![SignUp](https://i.ibb.co/RbKkvv9/index2.jpg "SignUp")
