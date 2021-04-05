@@ -9,21 +9,18 @@
 */
 
 include 'Config.php';
-include 'app/classes/AutoLoader.php';
-
 $config = new config();
-$autoloader = new AutoLoader();
 
 // Index view
-Route::set($config::ROOT_DIRECTORY, function() { // Index directory 
-    IndexController::CreateView('IndexView');
+App\Classes\Route::set($config::ROOT_DIRECTORY, function() { // Index directory 
+    App\Controllers\IndexController::CreateView('IndexView');
 });
 
 // Register 
-Route::set($config::ROOT_DIRECTORY . "register/", function() {
-    return (new RegisterController())->registerUser();
+App\Classes\Route::set($config::ROOT_DIRECTORY . "register/", function() {
+    return (new App\Controllers\RegisterController())->registerUser();
 });
 // Login
-Route::set($config::ROOT_DIRECTORY . "login/", function() {
-    return (new LoginController())->loginUser();
+App\Classes\Route::set($config::ROOT_DIRECTORY . "login/", function() {
+    return (new App\Controllers\LoginController())->loginUser();
   });

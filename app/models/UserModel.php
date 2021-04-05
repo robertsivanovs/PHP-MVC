@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Models;
+use App\Classes\Database;
+use \PDO;
+use \PDOException;
+
 /**
  * Model for users table.
  * 

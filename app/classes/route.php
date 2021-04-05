@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Classes;
+
 /**
  * Route class to compare URL with valid route and call a controller if URL matches route.
  */

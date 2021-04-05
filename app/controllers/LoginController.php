@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Controllers;
+use App\Classes\Validator;
+use App\Models\UserModel;
+
 /**
  * LoginController
  * 

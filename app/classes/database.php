@@ -1,4 +1,10 @@
 <?php
+
+namespace App\Classes;
+
+use \PDO;
+use \PDOException;
+
 /**
  * Database class @author Roberts Ivanovs
  * Establishes connection with database

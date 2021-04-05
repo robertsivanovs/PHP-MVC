@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Classes;
 
 /**
  * Validation class to validate and sanitize user input

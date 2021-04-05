@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controllers;
+use App\Classes\Database;
 
 /**
  * BaseController : Parent
